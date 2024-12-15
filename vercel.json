@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/fe-safizoo/server/server.mjs"
-    }
-  ]
-}
