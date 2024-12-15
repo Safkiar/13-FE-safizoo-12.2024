@@ -10,22 +10,22 @@ export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
+  const publicFolder = resolve(serverDistFolder, '../public'); // Resolve the public folder path
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
   const commonEngine = new CommonEngine();
 
+  // Set the view engine for SSR
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get('**', express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: 'index.html',
-  }));
+  // Serve static files from /browser (Angular app build files)
+  server.use(express.static(browserDistFolder, { maxAge: '1y' }));
 
-  // All regular routes use the Angular engine
+  // Serve static files from /public (images, etc.)
+  server.use('/public', express.static(publicFolder, { maxAge: '1y' }));
+
+  // All other routes use the Angular Universal engine for SSR
   server.get('**', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
@@ -47,7 +47,7 @@ export function app(): express.Express {
 function run(): void {
   const port = process.env['PORT'] || 4000;
 
-  // Start up the Node server
+  // Start the Node.js server
   const server = app();
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);

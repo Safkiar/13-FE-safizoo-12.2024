@@ -1,0 +1,14 @@
+<ul class="list-unstyled navbar-list side-nav">
+  <li
+    class="side-nav__item"
+    *ngFor="let tempProductCategory of productCategories"
+  >
+    <a
+      class="side-nav__link"
+      routerLink="/category/{{ tempProductCategory.id }}"
+      routerLinkActive="router-link-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >{{ tempProductCategory.categoryName }}</a
+    >
+  </li>
+</ul>

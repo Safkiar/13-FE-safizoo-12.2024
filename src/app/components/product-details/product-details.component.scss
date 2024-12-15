@@ -1,0 +1,70 @@
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h3 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .price {
+    text-align: center;
+    margin-top: 5px;
+  }
+  .button__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    button {
+      font-size: 15px;
+      font-weight: 500;
+      color: #585858;
+      background-color: #28b485;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      width: 160px;
+      &:hover {
+        background-color: #585858;
+        color: #28b485;
+      }
+    }
+  }
+  h4 {
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  p {
+    margin-left: 10px;
+  }
+
+  .button__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    a {
+      font-size: 15px;
+      font-weight: 500;
+      color: #e9e8e8;
+      background-color: #114b37;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      margin-top: 5px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      width: 160px;
+      text-decoration: none;
+      &:hover {
+        background-color: #8b7e7e;
+        color: #24d49a;
+      }
+    }
+  }
+}

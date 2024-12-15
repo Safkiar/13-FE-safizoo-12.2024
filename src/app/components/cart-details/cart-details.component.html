@@ -1,0 +1,68 @@
+<div class="main-content">
+  <div class="section-content section-conent-p30">
+    <div class="container-fluid">
+      <div *ngIf="cartItems.length > 0" class="cart-container">
+        <!-- Grid Header -->
+        <div class="cart-header">
+          <span>Produkt</span>
+          <span>Szczegóły</span>
+          <span>Akcja</span>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="cart-item" *ngFor="let tempCartItem of cartItems">
+          <div class="product-image">
+            <img [src]="tempCartItem.imageUrl" [alt]="tempCartItem.name" />
+          </div>
+          <div class="product-details">
+            <p class="product-name">{{ tempCartItem.name }}</p>
+            <p class="product-price">
+              {{ tempCartItem.unitPrice | currency : "PLN" }}
+            </p>
+          </div>
+          <div class="product-actions">
+            <div class="quantity-controls">
+              <button
+                class="green-btn"
+                (click)="incrementQuantity(tempCartItem)"
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+              <span class="quantity">{{ tempCartItem.quantity }}</span>
+              <button
+                class="green-btn"
+                (click)="decrementQuantity(tempCartItem)"
+              >
+                <i class="fa fa-minus"></i>
+              </button>
+            </div>
+
+            <button class="green-btn remove-btn" (click)="remove(tempCartItem)">
+              Usuń
+            </button>
+
+            <p class="item-total">
+              Łącznie:
+              {{
+                tempCartItem.quantity * tempCartItem.unitPrice
+                  | currency : "PLN"
+              }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="cart-summary">
+          <p>Ilość produktów: {{ totalQuantity }}</p>
+          <p>Całkowita cena: {{ totalPrice | currency : "PLN" }}</p>
+          <a routerLink="/checkout" class="green-btn"> Zamów </a>
+        </div>
+      </div>
+
+      <!-- Empty Cart Message -->
+      <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12">
+        Koszyk jest pusty
+      </div>
+    </div>
+  </div>
+</div>

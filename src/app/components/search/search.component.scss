@@ -1,0 +1,28 @@
+.form-header {
+  display: flex;
+  gap: 20px;
+  input {
+    flex-shrink: 0;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.308);
+  }
+  button {
+    background-color: #17944f;
+    border: none;
+    border-radius: 10%;
+  }
+}
+@media (max-width: 991px) {
+  .form-header {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    button {
+      border-radius: 10%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+}

@@ -1,0 +1,118 @@
+.cart-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 20% 40% 20%;
+  grid-auto-rows: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.cart-header {
+  display: contents;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cart-header span {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.cart-item {
+  display: contents;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-name {
+  margin: 0;
+  font-weight: bold;
+}
+
+.product-price {
+  margin: 0.5rem 0 0 0;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity {
+  display: inline-block;
+  min-width: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.item-total {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.remove-btn {
+  margin-top: 0.5rem;
+}
+
+.cart-summary {
+  grid-column: 1 / -1;
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  a {
+    text-decoration: none;
+  }
+}
+
+/* Green Buttons */
+.green-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.green-btn i {
+  margin: 0;
+}
+
+.green-btn:hover {
+  background-color: #45a049;
+}
+
+/* Make images and text nicely centered at all sizes */
+.cart-item > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

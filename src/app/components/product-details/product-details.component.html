@@ -1,0 +1,19 @@
+<div class="detail-section">
+  <div class="container-fluid">
+    <img src="{{ product.imageUrl }}" />
+
+    <h3>{{ product.name }}</h3>
+    <div class="price">{{ product.unitPrice | currency : "PLN" }}</div>
+    <div class="button__container">
+      <button (click)="addToCart()" class="primary-btn btn btn-sm">
+        Dodaj do koszyka
+      </button>
+    </div>
+    <hr />
+    <h4>Opis produktu:</h4>
+    <p>{{ product.description }}</p>
+    <div class="button__container">
+      <a routerLink="/products"> Powrót</a>
+    </div>
+  </div>
+</div>
