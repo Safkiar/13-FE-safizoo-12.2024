@@ -1,4 +1,8 @@
 [build]
-command = "ng build"
-functions = "netlify/functions"
-publish = "dist/fe-safizoo/browser"
+  command = "ng build && ng run fe-safizoo:server"
+  publish = "dist/fe-safizoo/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
