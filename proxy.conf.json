@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://safizoo-backend-spring-mysql.fly.dev",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

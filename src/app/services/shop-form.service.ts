@@ -8,9 +8,8 @@ import { State } from '../common/state';
   providedIn: 'root',
 })
 export class ShopFormService {
-  private countriesUrl =
-    'https://safizoo-backend-spring-mysql.fly.dev/api/countries';
-  private statesUrl = 'https://safizoo-backend-spring-mysql.fly.dev/api/states';
+  private countriesUrl = '/api/countries';
+  private statesUrl = '/api/states';
   constructor(private httpClient: HttpClient) {}
 
   getCountries(): Observable<Country[]> {

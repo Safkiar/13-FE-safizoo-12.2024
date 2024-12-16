@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CheckoutService {
-  private purchaseUrl =
-    'https://safizoo-backend-spring-mysql.fly.dev/api/checkout/purchase';
+  private purchaseUrl = '/api/checkout/purchase';
   constructor(private httpClient: HttpClient) {}
   placeOrder(purchase: Purchase): Observable<any> {
     return this.httpClient.post<Purchase>(this.purchaseUrl, purchase);
