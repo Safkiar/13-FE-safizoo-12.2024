@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "node dist/fe-safizoo/server/server.mjs",
     "build": "ng build",
+    "build:ssr": "ng run fe-safizoo:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:fe-safizoo": "node dist/fe-safizoo/server/server.mjs"
