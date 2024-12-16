@@ -5,9 +5,6 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 
-// Import HTTP proxy middleware
-import { createProxyMiddleware } from 'http-proxy-middleware';
-
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -21,16 +18,6 @@ export function app(): express.Express {
   // Set the view engine for SSR
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
-
-  // Proxy API requests to the backend server
-  server.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'https://safizoo-backend-spring-mysql.fly.dev', // Backend API URL
-      changeOrigin: true,
-      secure: true,
-    })
-  );
 
   // Serve static files from /browser (Angular app build files)
   server.use(express.static(browserDistFolder, { maxAge: '1y' }));

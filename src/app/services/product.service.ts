@@ -9,8 +9,9 @@ import { response } from 'express';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = '/api/products';
-  private categoryUrl = '/api/product-category';
+  private baseUrl = 'https://safizoo-backend-spring-mysql.fly.dev/api/products';
+  private categoryUrl =
+    'https://safizoo-backend-spring-mysql.fly.dev/api/product-category';
 
   constructor(private httpClient: HttpClient) {}
 
