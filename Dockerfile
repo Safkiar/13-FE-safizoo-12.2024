@@ -32,5 +32,5 @@ RUN npm install --only=production
 # Expose the port the app runs on
 EXPOSE 4000
 
-# Start the SSR server
-CMD ["npm", "run", "serve:ssr:fe-safizoo"]
+# Start the SSR serverr
+CMD ["node", "dist/fe-safizoo/server/server.mjs"]
