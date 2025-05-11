@@ -7,7 +7,7 @@ FRONTEND:
 https://github.com/Safkiar/13-FE-safizoo-12.2024
 
 DEPLOY:
-https://one-safizoo-fullstack-angular-spring.onrender.com
+https://one-safizoo-fullstack-angular-spring.onrender.com/products
 
 SPRING (JAVA) - ANGULAR - MYSQL - SCSS
 
